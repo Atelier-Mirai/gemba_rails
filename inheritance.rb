@@ -38,7 +38,7 @@ car.total_price
 cake = OrderedItem.new # ケーキの注文があった
 cake.unit_price = 1000 # ケーキの単価は1000円
 cake.volume = 5        # 数量は5つ
-cake.total_price =
+cake.total_price
 #=> 5500.0    税込5500円
 
 
@@ -48,7 +48,7 @@ cake.total_price =
 # 「価格あるもの」を抽象化したクラス (どちらかというとMix-inでの実装が望ましい)
 class PricedObject
   def total_price
-    price = Tax.rate
+    price * Tax.rate
   end
 
   def price
